@@ -9,6 +9,7 @@ def get_cat_image_url():
     headers = {"x-api-key": THE_CAT_API_KEY}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        return response.json()
+        data = response.json()
+        return data[0]["url"]
     else:
         return None
