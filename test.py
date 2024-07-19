@@ -13,15 +13,10 @@ def test_get_cat_image_url(mocker):
         "breeds": [],
         "favourite": {}
     }]
-    cat_info = get_cat_image_url()
+    cat_image_url = get_cat_image_url()
 
-    assert cat_info == [{
-        "id": "ebv",
-        "url": "https://cdn2.thecatapi.com/images/ebv.jpg",
-        "width": 176, "height": 540,
-        "breeds": [],
-        "favourite": {}
-    }]
+    assert cat_image_url == "https://cdn2.thecatapi.com/images/ebv.jpg"
+
 
 # Тест, который проверяет неуспешный запрос и возвращает None
 def test_get_cat_image_url_with_error(mocker):
@@ -34,6 +29,6 @@ def test_get_cat_image_url_with_error(mocker):
         "breeds": [],
         "favourite": {}
     }]
-    cat_info = get_cat_image_url()
+    cat_image_url = get_cat_image_url()
 
-    assert cat_info == None
+    assert cat_image_url is None
